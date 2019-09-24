@@ -1,0 +1,2 @@
+plagiarizing from https://refactoring.guru/design-patterns/abstract-factory
+why I do this, just for one day the url can not be foud(maybe 403). After all, I live in China. I admit I'm plagiarzing
