@@ -1,4 +1,7 @@
-#include "./checkbox.h"
+#include "checkboxes/checkbox.h"
+
+CheckBox::~CheckBox() {
+}
 
 void MacOSCheckbox::paint() {
     std::cout << "You have created MacOSCheckbox." << std::endl;

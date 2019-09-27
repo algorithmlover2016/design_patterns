@@ -5,14 +5,13 @@
 class Button {
 public:
     virtual void paint() = 0;
+    virtual ~Button() = 0;
 };
 
 class MacOSButton : public Button {
-public:
 };
 
 class WindowsButton : public Button {
-public:
 };
 
 #endif

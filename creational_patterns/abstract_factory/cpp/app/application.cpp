@@ -1,8 +1,8 @@
-#include "./application.h"
+#include "app/application.h"
 
 void Application::Application(GUIFactory factory) {
     button = factory.createButton();
-    checkbox = factory.createCheckbox();
+    checkbox = factory.createCheckBox();
 }
 
 void Application::paint() {

@@ -5,13 +5,14 @@
 class CheckBox {
 public:
     virtual void paint() = 0;
+    virtual ~CheckBox() = 0;
 };
 
-class MacOSCheckbox : public CheckBox {
+class MacOSCheckBox : public CheckBox {
 public:
 };
 
-class WindowsCheckbox : public CheckBox {
+class WindowsCheckBox : public CheckBox {
 public:
 };
 

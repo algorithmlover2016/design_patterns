@@ -1,7 +1,7 @@
 #include "./../../../head.h"
-#include "./buttons/button.h"
-#include "./checkboxes/checkbox.h"
-#include "./app/application.h"
+#include "buttons/button.h"
+#include "checkboxes/checkbox.h"
+#include "app/application.h"
 
 class Demo {
 public:
@@ -14,5 +14,3 @@ int main() {
     Application 
     return 0;
 }
-
-

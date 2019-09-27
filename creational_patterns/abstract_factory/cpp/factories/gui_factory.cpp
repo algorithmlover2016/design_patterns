@@ -1,9 +1,20 @@
-#include "./gui_factory.h"
+#include "factories/gui_factory.h"
 
-Button* MacOSFactory::createButton() {
-    return new MacOSFactory();
+GUIFactory::~GUIFactory() {
 }
 
-Checkbox* WindowsFactory::createCheckbox() {
-    return new WindowsFactory();
+Button* MacOSFactory::createButton() {
+    return new MacOSButton();
+}
+
+Checkbox* MacOSFactory::createCheckBox() {
+    return new MacOSCheckBox();
+}
+
+Button* WindowsFactory::createButton() {
+    return new WindowsButton();
+}
+
+Checkbox* WindowsFactory::createCheckBox() {
+    return new WindowsCheckBox();
 }
