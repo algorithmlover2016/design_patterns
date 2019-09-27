@@ -3,10 +3,14 @@
 CheckBox::~CheckBox() {
 }
 
-void MacOSCheckbox::paint() {
+void MacOSCheckBox::paint() {
     std::cout << "You have created MacOSCheckbox." << std::endl;
 }
 
-void WindowsCheckbox::paint() {
+void WindowsCheckBox::paint() {
     std::cout << "You have created WindowsCheckbox." << std::endl;
+}
+
+void LinuxCheckBox::paint() {
+    std::cout << "You have created LinuxCheckbox." << std::endl;
 }

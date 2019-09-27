@@ -1,6 +1,6 @@
 #ifndef DESIGN_PATTERNS_CREATIONAL_PATTERNS_ABSTRACT_FACTORY_CPP_CHECKBOXES_CHECKBOX_H
 #define DESIGN_PATTERNS_CREATIONAL_PATTERNS_ABSTRACT_FACTORY_CPP_CHECKBOXES_CHECKBOX_H
-#include "../../../../head.h"
+#include "head.h"
 
 class CheckBox {
 public:
@@ -9,11 +9,15 @@ public:
 };
 
 class MacOSCheckBox : public CheckBox {
-public:
+    void paint();
 };
 
 class WindowsCheckBox : public CheckBox {
-public:
+    void paint();
+};
+
+class LinuxCheckBox : public CheckBox {
+    void paint();
 };
 
 #endif

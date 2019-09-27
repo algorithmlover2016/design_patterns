@@ -1,15 +1,33 @@
 #include "app/application.h"
 
-void Application::Application(GUIFactory factory) {
-    button = factory.createButton();
-    checkbox = factory.createCheckBox();
+Application::Application(GUIFactory* factory) {
+    if (nullptr == factory) {
+        std::cout << "unknow system lead to nullptr factory" << std::endl;
+        return ;
+    }
+    button = factory->createButton();
+    checkbox = factory->createCheckBox();
 }
 
 void Application::paint() {
-    button.paint();
-    checkbox.paint();
+    if (nullptr == button) {
+        std::cout << "unknow system leading to nullptr button" << std::endl;
+        return ;
+    }
+
+    if (nullptr == checkbox) {
+        std::cout << "unknow system leading to nullptr checkbox" << std::endl;
+        return ;
+    }
+    button->paint();
+    checkbox->paint();
 }
 
 Application::~Application() {
-    // virtual delete ?
+    if (nullptr != button) {
+        delete button;
+    }
+    if (nullptr != checkbox) {
+        delete checkbox;
+    }
 }

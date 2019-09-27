@@ -7,7 +7,7 @@ Button* MacOSFactory::createButton() {
     return new MacOSButton();
 }
 
-Checkbox* MacOSFactory::createCheckBox() {
+CheckBox* MacOSFactory::createCheckBox() {
     return new MacOSCheckBox();
 }
 
@@ -15,6 +15,14 @@ Button* WindowsFactory::createButton() {
     return new WindowsButton();
 }
 
-Checkbox* WindowsFactory::createCheckBox() {
+CheckBox* WindowsFactory::createCheckBox() {
     return new WindowsCheckBox();
+}
+
+Button* LinuxFactory::createButton() {
+    return new LinuxButton();
+}
+
+CheckBox* LinuxFactory::createCheckBox() {
+    return new LinuxCheckBox();
 }

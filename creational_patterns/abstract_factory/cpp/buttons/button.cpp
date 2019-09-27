@@ -10,3 +10,7 @@ void MacOSButton::paint() {
 void WindowsButton::paint() {
     std::cout << "You have created WindowsButton." << std::endl;
 }
+
+void LinuxButton::paint() {
+    std::cout << "You have created LinuxButton." << std::endl;
+}
