@@ -40,4 +40,6 @@
 #include <regex>
 #include <tuple>
 
+#include <memory>
+
 #endif
