@@ -19,6 +19,7 @@ private:
     Singleton() {
     }
     Singleton(Singleton const & old);
+    Singleton& operator =(Singleton const & other);
     ~Singleton() {}
 private:
     static Singleton* _instance;
