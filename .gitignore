@@ -1,2 +1,6 @@
 *.dSYM
 output
+
+#tmp file
+*.o
+main_*
