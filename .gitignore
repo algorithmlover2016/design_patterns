@@ -1,6 +1,7 @@
 *.dSYM
 output
 *.gch
+*.swp
 
 #tmp file
 *.o

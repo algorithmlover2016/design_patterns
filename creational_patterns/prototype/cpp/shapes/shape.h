@@ -36,7 +36,7 @@ public:
     #pragma clang diagnostic push
     #pragma clang diagnostic ignored "-Woverloaded-virtual"
     // Member declaration raising the warning.
-    bool equals(Circle const * const obj) const;
+    bool equals(Shape const * const obj) const;
     #pragma clang diagnostic pop
     Circle* GetClassType();
 
@@ -56,7 +56,7 @@ public:
     #pragma clang diagnostic push
     #pragma clang diagnostic ignored "-Woverloaded-virtual"
     // Member declaration raising the warning.
-    bool equals(Rectangle const * const target);
+    bool equals(Shape const * const target);
     #pragma clang diagnostic pop
     Rectangle* GetClassType();
 

@@ -41,6 +41,7 @@ Shape* Shape::clone() {
 
 bool Shape::equals(Shape const * const obj) const {
     if (nullptr == obj) {
+        std::cout << "obj is nullptr" << std::endl;
         return false;
     }
     // if (typeid(*(obj->GetClassType())) != typeid(*this))  {
@@ -48,9 +49,12 @@ bool Shape::equals(Shape const * const obj) const {
     // }
 
     if (!decay_equiv<decltype(obj), decltype(this)>::value) {
+        std::cout << "type different" << std::endl;
         return false;
     }
+    std::cout << "Shape non-null and type check ok" << std::endl;
 
+    std::cout << std::boolalpha << (x == obj->x) << std::endl;
     return x == obj->x && y == obj->y && color == obj->color;
 }
 
@@ -65,6 +69,8 @@ Circle::Circle(Circle const * const target) {
     if (nullptr != target) {
         this->radius = target->radius;
         Shape::Shape(target);
+    } else {
+        std::cout << "construct Circle error" << std::endl;
     }
 }
 
@@ -80,14 +86,19 @@ void Circle::setRadius(int radius) {
     this->radius = radius;
 }
 
-bool Circle::equals(Circle const * const obj) const {
+bool Circle::equals(Shape const * const obj) const {
     if (nullptr == obj) {
+        std::cout << "obj is nullptr" << std::endl;
         return false;
     }
-    if (!decay_equiv<decltype(obj), decltype(this)>::value) {
+    Circle const * const circle = dynamic_cast<Circle const* const>(obj);
+    if (!decay_equiv<decltype(circle), decltype(this)>::value) {
+        std::cout << "type different" << std::endl;
         return false;
     }
-    return this->radius == obj->radius && Shape::equals(obj);
+    std::cout << "Circle non-null and type check ok" << std::endl;
+    std::cout << std::boolalpha << (this->radius == circle->radius) << std::endl;
+    return this->radius == circle->radius && Shape::equals(circle);
 }
 
 Circle* Circle::GetClassType() {
@@ -102,7 +113,8 @@ Rectangle::Rectangle(Rectangle const * const target) {
         this->width = target->width;
         this->height = target->height;
         Shape::Shape(target);
-
+    } else {
+        std::cout << "construct Rectangle error" << std::endl;
     }
 }
 
@@ -126,15 +138,20 @@ void Rectangle::setHeight(int height) {
     this->height = height;
 }
 
-bool Rectangle::equals(Rectangle const * const obj) {
+bool Rectangle::equals(Shape const * const obj) {
     if (nullptr == obj) {
+        std::cout << "obj is nullptr" << std::endl;
         return false;
     }
+    Rectangle const * const rectangle = dynamic_cast<Rectangle const * const>(obj);
 
-    if (!decay_equiv<decltype(obj), decltype(this)>::value) {
+    if (!decay_equiv<decltype(rectangle), decltype(this)>::value) {
+        std::cout << "type different" << std::endl;
         return false;
     }
-    return this->width == obj->width && this->height == obj->height && Shape::equals(obj);
+    std::cout << "Rectangle non-null and type check ok" << std::endl;
+    std::cout << std::boolalpha << (this->width == rectangle->width) << std::endl;
+    return this->width == rectangle->width && this->height == rectangle->height && Shape::equals(obj);
 }
 
 Rectangle* Rectangle::GetClassType() {
