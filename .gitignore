@@ -1,5 +1,6 @@
 *.dSYM
 output
+*.gch
 
 #tmp file
 *.o
