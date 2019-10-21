@@ -42,4 +42,6 @@
 
 #include <memory>
 
+#include <type_traits>
+
 #endif
