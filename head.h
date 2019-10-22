@@ -44,4 +44,6 @@
 
 #include <type_traits>
 
+#include <cmath>
+
 #endif
