@@ -48,4 +48,8 @@
 
 #include <initializer_list>
 
+#ifndef UNUSED
+#define UNUSED(x) (void)(x)
+#endif
+
 #endif
