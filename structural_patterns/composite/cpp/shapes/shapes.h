@@ -122,9 +122,24 @@ private:
 
 class CompoundShape : public BaseShape {
 protected:
-    std::list<Shape*> children;
+    ::std::list<Shape*> children;
 public:
-    CompoundShape
+    CompoundShape(::std::initializer_list<Shape*> & elements);
+    void add(Shape* component);
+    void add(::std::initializer_list<Shape*> & elements);
+    void remove(Shape* child);
+    void remove(::std::initializer_list<Shape*> & elements);
+    void clear();
+    bool selectChildAt(int x, int y);
+
+    virtual int getX();
+    virtual int getY();
+    virtual int getWidth();
+    virtual int getHeight();
+    virtual void move(int x, int y);
+    virtual bool isInsideBounds(int x, int y);
+    virtual void unSelect();
+    virtual void paint(std::string const & str = "CompoundShape paint") const;
 };
 
 #endif

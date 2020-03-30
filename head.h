@@ -46,4 +46,6 @@
 
 #include <cmath>
 
+#include <initializer_list>
+
 #endif
