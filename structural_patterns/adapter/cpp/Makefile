@@ -36,4 +36,4 @@ ${OUT_DIR}/adapters.o : head.h graphics/graphics.h adapters/square_peg_adapter.h
 
 .PHONY : clean
 clean :
-	- rm -rf ${OUT_DIR}/${MAIN_BIN} $(object)
+	- rm -rf ${OUT_DIR}/${MAIN_BIN}* $(object)
